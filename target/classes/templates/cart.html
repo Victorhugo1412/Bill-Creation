@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+</head>
+
+<body>
+    <h1>Cart</h1>
+    <table>
+        <tr th:each="item : ${cartItems}">
+            <td th:text="${item.product.name}"></td>
+            <td th:text="${item.product.price}"></td>
+            <td>
+                <form th:action="@{/updateCartItem}" method="post">
+                    <input type="hidden" name="cartItemId" th:value="${item.id}">
+                    <input type="number" name="quantity" th:value="${item.quantity}" min="1">
+                    <button type="submit">Update</button>
+                </form>
+            </td>
+            <td>
+                <form th:action="@{/removeCartItem}" method="post">
+                    <input type="hidden" name="cartItemId" th:value="${item.id}">
+                    <button type="submit">Remove</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+    <p>Total Price: $${totalPrice}</p>
+    <form th:action="@{/generateBill}" method="post">
+        <button type="submit">Generate Bill</button>
+    </form>
+</body>
+
+</html>
