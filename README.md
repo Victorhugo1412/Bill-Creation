@@ -1,4 +1,4 @@
-# Plotlinetask
+# Bill Creation
 Billing website made using spring boot and thymleaf
 ![login_ss](https://github.com/Victorhugo1412/Plotlinetask/assets/85059453/472adfb4-1f62-4790-8ecf-bfc32b2e9882)
 ![products_ss](https://github.com/Victorhugo1412/Plotlinetask/assets/85059453/f60af1f2-a93c-4e4c-99a7-1533c31fe44e)
